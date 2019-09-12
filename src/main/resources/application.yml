@@ -1,0 +1,41 @@
+server:
+  port: 8889
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          label: master
+          uri: http://2290j7424k.iok.la/framework/config-repo.git
+          username: sorta@163.com
+          password: 524830xie
+    bus:
+      refresh:
+        enabled: true
+  rabbitmq:
+    host: 47.101.31.55
+    password: guest
+    port: 5672
+    username: guest
+
+eureka:
+  client:
+    # registerWithEureka: true
+    # fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://adorgroup:123456@localhost:8762/eureka/
+    #  instance:
+    #    leaseRenewalIntervalInSeconds: 10
+    #statusPageUrlPath: ${management.context-path}/info
+    # healthCheckUrlPath: ${management.context-path}/health
+#    metadataMap:
+#      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${server.port}}}
+
+#management:
+#  security:
+#    enabled: false    #刷新时，关闭安全验证
+#  context-path: /
+
